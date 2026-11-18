@@ -1,0 +1,73 @@
+=== batting: 912 player-seasons, k=5 ===
+
+PCA loadings
+                     PC1    PC2    PC3
+bat_avg_adj_rel    0.134  0.340  0.511
+bat_sr_rel         0.313  0.408 -0.156
+boundary_pct_rel   0.107  0.454 -0.323
+six_pct_rel        0.316  0.257 -0.300
+dot_pct_bat_rel   -0.338 -0.066 -0.395
+balls_per_inn     -0.198  0.316  0.518
+avg_entry_ball     0.433 -0.294 -0.042
+share_balls_pp    -0.436  0.235 -0.159
+share_balls_death  0.438 -0.223  0.026
+sr_pp_rel          0.045  0.312 -0.232
+sr_death_rel       0.221  0.228  0.121
+
+Explained variance: [0.3264, 0.2964, 0.1437, 0.0805, 0.0538, 0.0446, 0.0243, 0.0155, 0.0108, 0.0023, 0.0017]
+
+Choosing k
+ k  inertia  silhouette_kmeans  silhouette_ward  ARI_kmeans_vs_ward
+ 2 7618.331              0.236            0.211               0.595
+ 3 6331.588              0.224            0.168               0.500
+ 4 5581.756              0.200            0.123               0.421
+ 5 5141.769              0.190            0.127               0.425
+ 6 4809.987              0.174            0.121               0.347
+ 7 4547.875              0.159            0.112               0.343
+ 8 4309.180              0.156            0.110               0.349
+
+K-Means role profiles (feature means)
+role_km            Aggressive opener  Anchor  Conservative top order  Finisher / power-hitter  Middle-order accumulator
+bat_avg_adj                    34.78   42.22                   24.72                    36.71                     24.31
+bat_sr                        158.22  133.35                  123.41                   151.88                    122.75
+boundary_pct                   24.13   17.12                   17.34                    19.58                     14.07
+six_pct                         8.52    4.52                    3.94                     8.70                      4.41
+dot_pct_bat                    35.24   32.90                   40.56                    30.48                     34.45
+balls_per_inn                  19.91   25.74                   18.96                    15.62                     15.01
+avg_entry_ball                 14.76   17.33                    9.32                    66.85                     59.24
+share_balls_pp                  0.47    0.36                    0.58                     0.05                      0.11
+share_balls_death               0.07    0.12                    0.05                     0.43                      0.32
+sr_pp                         147.33  122.96                  120.38                   139.08                     88.19
+sr_death                      207.97  177.12                  128.68                   184.91                    153.43
+n_player_seasons               97.00  190.00                  233.00                   146.00                    246.00
+
+Aggressive opener: CH Gayle, DR Smith, KL Rahul, G Gambhir, AB de Villiers, ML Hayden, RR Pant, YBK Jaiswal, SR Watson, DA Warner
+Anchor: V Kohli, JC Buttler, MEK Hussey, Shubman Gill, DA Warner, KL Rahul, KS Williamson, JH Kallis, SR Tendulkar, DP Conway
+Conservative top order: R Dravid, Shubman Gill, DA Warner, SS Iyer, SA Yadav, S Dhawan, D Padikkal, CA Lynn, F du Plessis, Q de Kock
+Finisher / power-hitter: RG Sharma, SK Raina, KD Karthik, DA Miller, CL White, RK Singh, MS Dhoni, JP Duminy, EJG Morgan, RR Pant
+Middle-order accumulator: A Symonds, RR Pant, RG Sharma, MS Dhoni, S Badrinath, AT Rayudu, Tilak Varma, R Dravid, S Dhawan, Y Venugopal Rao
+
+Validation vs reference labels
+{'reference_players_found': 39, 'missing': [], 'kmeans_agreement': np.float64(0.6923076923076923), 'ward_agreement': np.float64(0.7435897435897436), 'kmeans_ARI_vs_reference': 0.5468341585616112, 'kmeans_NMI_vs_reference': 0.698903242083035, 'ARI_kmeans_vs_ward': 0.4280443287083713, 'ARI_kmeans_raw_vs_pcspace': 0.9417505985276515, 'pcs_for_90pct_variance': 5, 'silhouette_kmeans': 0.1897254662712733}
+
+Confusion (reference rows x K-Means role columns)
+kmeans_role              Aggressive opener  Anchor  Conservative top order  Finisher / power-hitter  Middle-order accumulator
+reference                                                                                                                    
+Aggressive opener                        6       3                       5                        0                         0
+Anchor                                   0      12                       0                        0                         0
+Finisher / power-hitter                  0       0                       0                        9                         4
+
+Mismatches
+         player               reference  found              kmeans_role                ward_role
+      DA Warner       Aggressive opener   True                   Anchor                   Anchor
+     JC Buttler       Aggressive opener   True                   Anchor        Aggressive opener
+        PP Shaw       Aggressive opener   True   Conservative top order        Aggressive opener
+Abhishek Sharma       Aggressive opener   True   Conservative top order        Aggressive opener
+    BB McCullum       Aggressive opener   True   Conservative top order        Aggressive opener
+      Q de Kock       Aggressive opener   True   Conservative top order                   Anchor
+   Ishan Kishan       Aggressive opener   True                   Anchor        Aggressive opener
+    JM Bairstow       Aggressive opener   True   Conservative top order        Aggressive opener
+      HH Pandya Finisher / power-hitter   True Middle-order accumulator  Finisher / power-hitter
+     KD Karthik Finisher / power-hitter   True Middle-order accumulator Middle-order accumulator
+M Shahrukh Khan Finisher / power-hitter   True Middle-order accumulator Middle-order accumulator
+    Abdul Samad Finisher / power-hitter   True Middle-order accumulator Middle-order accumulator

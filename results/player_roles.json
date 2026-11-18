@@ -1,0 +1,54 @@
+{
+  "batting_unadjusted": {
+    "kmeans_agreement": 0.6153846153846154,
+    "kmeans_ARI_vs_reference": 0.4972180757226218,
+    "silhouette_kmeans": 0.20753329508441679
+  },
+  "batting": {
+    "reference_players_found": 39,
+    "missing": [],
+    "kmeans_agreement": 0.6923076923076923,
+    "ward_agreement": 0.7435897435897436,
+    "kmeans_ARI_vs_reference": 0.5468341585616112,
+    "kmeans_NMI_vs_reference": 0.698903242083035,
+    "ARI_kmeans_vs_ward": 0.4280443287083713,
+    "ARI_kmeans_raw_vs_pcspace": 0.9417505985276515,
+    "pcs_for_90pct_variance": 5,
+    "silhouette_kmeans": 0.1897254662712733,
+    "explained_variance_ratio": [
+      0.3264,
+      0.2964,
+      0.1437,
+      0.0805,
+      0.0538,
+      0.0446,
+      0.0243,
+      0.0155,
+      0.0108,
+      0.0023,
+      0.0017
+    ]
+  },
+  "bowling": {
+    "reference_players_found": 31,
+    "missing": [],
+    "kmeans_agreement": 0.9032258064516129,
+    "ward_agreement": 0.5483870967741935,
+    "kmeans_ARI_vs_reference": 0.778957376010141,
+    "kmeans_NMI_vs_reference": 0.7623381593987316,
+    "ARI_kmeans_vs_ward": 0.5304460453433322,
+    "ARI_kmeans_raw_vs_pcspace": 0.9893062706464064,
+    "pcs_for_90pct_variance": 5,
+    "silhouette_kmeans": 0.2284128013184511,
+    "explained_variance_ratio": [
+      0.3642,
+      0.269,
+      0.1545,
+      0.1021,
+      0.0718,
+      0.0343,
+      0.004,
+      0.0
+    ]
+  }
+}

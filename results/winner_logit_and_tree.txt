@@ -1,0 +1,129 @@
+=== Logistic regression, pre-match features (standardised, train 2008-21) ===
+                               std_coef  odds_ratio_per_SD  p_value
+A_home                           0.1964             1.2170   0.0195
+diff_elo                         0.2309             1.2597   0.0782
+diff_form5                      -0.1867             0.8297   0.1452
+diff_lineup_bat_sr               0.1260             1.1343   0.2132
+diff_form10                      0.1417             1.1522   0.3147
+h2h_A_winrate_smooth            -0.0712             0.9312   0.3826
+venue_avg_inn1_smooth           -0.0745             0.9283   0.3949
+B_home                          -0.0704             0.9320   0.4052
+diff_lineup_bowl_econ            0.0755             1.0784   0.4116
+diff_avg_conceded5              -0.0875             0.9162   0.4158
+is_playoff                       0.0579             1.0596   0.4189
+recent_league_inn1              -0.0429             0.9580   0.5982
+diff_season_winrate             -0.0428             0.9581   0.6743
+venue_batfirst_winrate_smooth    0.0301             1.0305   0.7096
+diff_lineup_bat_rpi             -0.0285             0.9719   0.7480
+toss_winner_bats_first           0.0038             1.0038   0.9585
+diff_avg_scored5                -0.0003             0.9997   0.9979
+
+=== Logistic regression, innings-break features ===
+                               std_coef  odds_ratio_per_SD  p_value
+inn1_total                       1.1239             3.0768   0.0000
+diff_elo                         0.2816             1.3253   0.0543
+recent_league_inn1              -0.1685             0.8449   0.0654
+toss_winner_bats_first           0.1127             1.1193   0.1674
+diff_form5                      -0.1825             0.8331   0.1917
+venue_avg_inn1_smooth           -0.1274             0.8804   0.1996
+B_home                          -0.1025             0.9026   0.2767
+diff_lineup_bat_sr               0.1205             1.1280   0.2794
+diff_lineup_bat_rpi             -0.0947             0.9096   0.3370
+A_home                           0.0892             1.0933   0.3402
+h2h_A_winrate_smooth            -0.0719             0.9306   0.4198
+diff_avg_conceded5              -0.0907             0.9133   0.4449
+diff_lineup_bowl_econ            0.0782             1.0813   0.4452
+venue_batfirst_winrate_smooth    0.0627             1.0648   0.4861
+is_playoff                       0.0368             1.0374   0.6453
+diff_season_winrate             -0.0412             0.9596   0.7106
+diff_form10                      0.0541             1.0556   0.7284
+inn1_wkts                        0.0328             1.0334   0.7438
+diff_avg_scored5                 0.0119             1.0120   0.9155
+
+=== CART rules, pre_match (inputs are standardised) ===
+|--- diff_elo <= -0.30
+|   |--- diff_lineup_bat_sr <= -1.14
+|   |   |--- recent_league_inn1 <= -0.71
+|   |   |   |--- class: 0
+|   |   |--- recent_league_inn1 >  -0.71
+|   |   |   |--- diff_avg_conceded5 <= 0.12
+|   |   |   |   |--- diff_avg_conceded5 <= -0.24
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- diff_avg_conceded5 >  -0.24
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- diff_avg_conceded5 >  0.12
+|   |   |   |   |--- class: 0
+|   |--- diff_lineup_bat_sr >  -1.14
+|   |   |--- diff_avg_conceded5 <= -0.65
+|   |   |   |--- diff_elo <= -1.28
+|   |   |   |   |--- class: 1
+|   |   |   |--- diff_elo >  -1.28
+|   |   |   |   |--- venue_batfirst_winrate_smooth <= -0.09
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- venue_batfirst_winrate_smooth >  -0.09
+|   |   |   |   |   |--- class: 1
+|   |   |--- diff_avg_conceded5 >  -0.65
+|   |   |   |--- recent_league_inn1 <= -1.33
+|   |   |   |   |--- class: 1
+|   |   |   |--- recent_league_inn1 >  -1.33
+|   |   |   |   |--- h2h_A_winrate_smooth <= 1.19
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- h2h_A_winrate_smooth >  1.19
+|   |   |   |   |   |--- class: 0
+|--- diff_elo >  -0.30
+|   |--- B_home <= 0.44
+|   |   |--- diff_avg_conceded5 <= 1.45
+|   |   |   |--- diff_avg_scored5 <= -0.89
+|   |   |   |   |--- diff_lineup_bat_rpi <= -0.26
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- diff_lineup_bat_rpi >  -0.26
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- diff_avg_scored5 >  -0.89
+|   |   |   |   |--- diff_season_winrate <= 1.65
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- diff_season_winrate >  1.65
+|   |   |   |   |   |--- class: 0
+|   |   |--- diff_avg_conceded5 >  1.45
+|   |   |   |--- class: 1
+|   |--- B_home >  0.44
+|   |   |--- diff_lineup_bowl_econ <= -0.85
+|   |   |   |--- diff_lineup_bat_rpi <= 0.57
+|   |   |   |   |--- diff_avg_conceded5 <= -0.56
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- diff_avg_conceded5 >  -0.56
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- diff_lineup_bat_rpi >  0.57
+|   |   |   |   |--- class: 0
+|   |   |--- diff_lineup_bowl_econ >  -0.85
+|   |   |   |--- diff_avg_conceded5 <= -0.97
+|   |   |   |   |--- diff_avg_scored5 <= -0.74
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- diff_avg_scored5 >  -0.74
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- diff_avg_conceded5 >  -0.97
+|   |   |   |   |--- diff_avg_conceded5 <= -0.14
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- diff_avg_conceded5 >  -0.14
+|   |   |   |   |   |--- class: 0
+
+=== CART rules, innings_break (inputs are standardised) ===
+|--- par_diff_recent <= 0.40
+|   |--- par_diff_venue <= -1.05
+|   |   |--- par_diff_venue <= -1.60
+|   |   |   |--- class: 0
+|   |   |--- par_diff_venue >  -1.60
+|   |   |   |--- class: 0
+|   |--- par_diff_venue >  -1.05
+|   |   |--- par_diff_venue <= -0.24
+|   |   |   |--- class: 0
+|   |   |--- par_diff_venue >  -0.24
+|   |   |   |--- class: 0
+|--- par_diff_recent >  0.40
+|   |--- inn1_total <= 1.45
+|   |   |--- diff_elo <= -0.49
+|   |   |   |--- class: 0
+|   |   |--- diff_elo >  -0.49
+|   |   |   |--- class: 1
+|   |--- inn1_total >  1.45
+|   |   |--- class: 1
+

@@ -1,0 +1,9 @@
+Query: 2024-05-26 Sunrisers Hyderabad 113/10 vs Kolkata Knight Riders at MA Chidambaram Stadium; actual winner: Kolkata Knight Riders
+KNN P(bat-first wins) = 0.12
+
+      date                               venue        bat_first_team     bat_second_team  inn1_total  inn1_wkts              winner  bat_first_won  distance
+2009-04-19                            Newlands Kolkata Knight Riders     Deccan Chargers       101.0       10.0     Deccan Chargers            0.0  1.169234
+2020-10-31 Dubai International Cricket Stadium        Delhi Capitals      Mumbai Indians       110.0        9.0      Mumbai Indians            0.0  1.484996
+2010-04-15              MA Chidambaram Stadium   Chennai Super Kings      Delhi Capitals       112.0        9.0      Delhi Capitals            0.0  1.527383
+2010-04-11                Arun Jaitley Stadium        Delhi Capitals        Punjab Kings       111.0       10.0        Punjab Kings            0.0  1.551697
+2019-04-09              MA Chidambaram Stadium Kolkata Knight Riders Chennai Super Kings       108.0        9.0 Chennai Super Kings            0.0  1.823495

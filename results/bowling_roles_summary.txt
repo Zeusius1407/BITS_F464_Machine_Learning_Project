@@ -1,0 +1,57 @@
+=== bowling: 843 player-seasons, k=4 ===
+
+PCA loadings
+                         PC1    PC2    PC3
+economy               -0.127  0.648 -0.002
+bowl_sr_adj            0.150  0.120  0.607
+dot_pct_bowl          -0.336 -0.449  0.197
+boundary_pct_conceded -0.328  0.513  0.138
+share_overs_pp        -0.489 -0.112  0.414
+share_overs_mid        0.564  0.017 -0.075
+share_overs_death     -0.330  0.155 -0.548
+overs_per_inn         -0.273 -0.252 -0.310
+
+Explained variance: [0.3642, 0.269, 0.1545, 0.1021, 0.0718, 0.0343, 0.004, 0.0]
+
+Choosing k
+ k  inertia  silhouette_kmeans  silhouette_ward  ARI_kmeans_vs_ward
+ 2 4825.237              0.284            0.262               0.776
+ 3 3974.039              0.248            0.206               0.638
+ 4 3586.698              0.226            0.217               0.516
+ 5 3284.311              0.223            0.187               0.469
+ 6 3005.528              0.200            0.146               0.468
+ 7 2798.826              0.188            0.133               0.435
+ 8 2644.537              0.174            0.138               0.442
+
+K-Means role profiles (feature means)
+role_km                Death overs  Middle overs  Part-time / change bowler  Powerplay / new ball
+economy                       9.08          7.30                       8.47                  7.43
+bowl_sr_adj                  21.28         23.55                      33.00                 21.90
+dot_pct_bowl                 33.91         34.84                      30.18                 43.15
+boundary_pct_conceded        20.49         12.80                      16.41                 16.65
+share_overs_pp                0.34          0.13                       0.13                  0.54
+share_overs_mid               0.33          0.72                       0.73                  0.21
+share_overs_death             0.34          0.15                       0.14                  0.25
+overs_per_inn                 3.52          3.50                       2.74                  3.64
+n_player_seasons            251.00        237.00                     103.00                252.00
+
+Death overs: S Kaul, K Rabada, T Natarajan, DJ Bravo, A Nortje, PJ Cummins, R Vinay Kumar, SN Thakur, NLTC Perera, JJ Bumrah
+Middle overs: Harbhajan Singh, CV Varun, YS Chahal, Rashid Khan, R Ashwin, AR Patel, Imran Tahir, A Kumble, A Mishra, PP Chawla
+Part-time / change bowler: MC Henriques, KH Pandya, RA Jadeja, PP Ojha, PP Chawla, M Markande, R Bhatia, Ravi Bishnoi, HH Pandya, KA Pollard
+Powerplay / new ball: DW Steyn, M Prasidh Krishna, B Kumar, SL Malinga, Mohammed Shami, DL Chahar, MG Johnson, SP Narine, JP Faulkner, R Ashwin
+
+Validation vs reference labels
+{'reference_players_found': 31, 'missing': [], 'kmeans_agreement': np.float64(0.9032258064516129), 'ward_agreement': np.float64(0.5483870967741935), 'kmeans_ARI_vs_reference': 0.778957376010141, 'kmeans_NMI_vs_reference': 0.7623381593987316, 'ARI_kmeans_vs_ward': 0.5304460453433322, 'ARI_kmeans_raw_vs_pcspace': 0.9893062706464064, 'pcs_for_90pct_variance': 5, 'silhouette_kmeans': 0.2284128013184511}
+
+Confusion (reference rows x K-Means role columns)
+kmeans_role           Death overs  Middle overs  Powerplay / new ball
+reference                                                            
+Death overs                     7             0                     1
+Middle overs                    0            13                     0
+Powerplay / new ball            2             0                     8
+
+Mismatches
+        player            reference  found          kmeans_role            ward_role
+Mohammed Siraj Powerplay / new ball   True          Death overs Powerplay / new ball
+      UT Yadav Powerplay / new ball   True          Death overs Powerplay / new ball
+    SL Malinga          Death overs   True Powerplay / new ball Powerplay / new ball

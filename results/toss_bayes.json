@@ -1,0 +1,104 @@
+{
+  "toss_winner_win_rate": 0.5070688030160226,
+  "toss_binom_p": 0.6673583570690403,
+  "toss_win_rate_by_decision": {
+    "mean": {
+      "bat": 0.45549738219895286,
+      "field": 0.5360824742268041
+    },
+    "size": {
+      "bat": 382,
+      "field": 679
+    }
+  },
+  "chi2_decision_p": 0.014039637427758558,
+  "chi2_team_p": 0.009676996167674387,
+  "home_win_rate": 0.5455861070911722,
+  "home_n": 691,
+  "home_binom_p": 0.01828023113729489,
+  "lrt_venue_x_decision": {
+    "LR": 12.3495222477693,
+    "df": 13.0,
+    "p": 0.4992123281181805
+  },
+  "lrt_era_x_decision": {
+    "LR": 0.3089099637925301,
+    "df": 2.0,
+    "p": 0.8568820664795759
+  },
+  "logit_main_effects": {
+    "Coef.": {
+      "Intercept": -0.1997,
+      "C(venue_g)[T.Dr DY Patil Sports Academy]": 0.2178,
+      "C(venue_g)[T.Dubai International Cricket Stadium]": -0.3072,
+      "C(venue_g)[T.Eden Gardens]": 0.0567,
+      "C(venue_g)[T.M Chinnaswamy Stadium]": -0.018,
+      "C(venue_g)[T.MA Chidambaram Stadium]": 0.044,
+      "C(venue_g)[T.Maharashtra Cricket Association Stadium]": 0.145,
+      "C(venue_g)[T.Narendra Modi Stadium]": -0.0028,
+      "C(venue_g)[T.Other]": 0.1858,
+      "C(venue_g)[T.Punjab Cricket Association IS Bindra Stadium]": -0.1373,
+      "C(venue_g)[T.Rajiv Gandhi International Stadium]": -0.6278,
+      "C(venue_g)[T.Sawai Mansingh Stadium]": 0.1464,
+      "C(venue_g)[T.Sheikh Zayed Stadium]": 0.2085,
+      "C(venue_g)[T.Wankhede Stadium]": 0.0563,
+      "C(era)[T.2015-19]": 0.2481,
+      "C(era)[T.2020-24]": -0.1311,
+      "field": 0.2958
+    },
+    "P>|z|": {
+      "Intercept": 0.4015,
+      "C(venue_g)[T.Dr DY Patil Sports Academy]": 0.5872,
+      "C(venue_g)[T.Dubai International Cricket Stadium]": 0.4257,
+      "C(venue_g)[T.Eden Gardens]": 0.8537,
+      "C(venue_g)[T.M Chinnaswamy Stadium]": 0.9537,
+      "C(venue_g)[T.MA Chidambaram Stadium]": 0.8869,
+      "C(venue_g)[T.Maharashtra Cricket Association Stadium]": 0.6847,
+      "C(venue_g)[T.Narendra Modi Stadium]": 0.9945,
+      "C(venue_g)[T.Other]": 0.4755,
+      "C(venue_g)[T.Punjab Cricket Association IS Bindra Stadium]": 0.6871,
+      "C(venue_g)[T.Rajiv Gandhi International Stadium]": 0.0536,
+      "C(venue_g)[T.Sawai Mansingh Stadium]": 0.6728,
+      "C(venue_g)[T.Sheikh Zayed Stadium]": 0.6081,
+      "C(venue_g)[T.Wankhede Stadium]": 0.8447,
+      "C(era)[T.2015-19]": 0.1238,
+      "C(era)[T.2020-24]": 0.4115,
+      "field": 0.0311
+    }
+  },
+  "beta_prior_empirical_bayes": [
+    1175.7871897406203,
+    1315.3646119241107
+  ],
+  "eb_prior_strength_pseudo_matches": 2491.151801664731,
+  "beta_prior_weak": [
+    4.719853639408452,
+    5.280146360591548
+  ],
+  "backtest": {
+    "empirical_bayes": {
+      "matches": 618,
+      "share_recommend_field": 1.0,
+      "share_rule_followed": 0.7362459546925566,
+      "toss_winner_win_rate_followed": 0.5362637362637362,
+      "n_followed": 455,
+      "toss_winner_win_rate_not_followed": 0.4601226993865031,
+      "n_not_followed": 163,
+      "chi2_p": 0.11461956302787286,
+      "recommended_role_win_rate": 0.5372168284789643,
+      "always_field_role_win_rate": 0.5372168284789645
+    },
+    "weak_prior": {
+      "matches": 618,
+      "share_recommend_field": 0.8559870550161812,
+      "share_rule_followed": 0.7119741100323624,
+      "toss_winner_win_rate_followed": 0.5272727272727272,
+      "n_followed": 440,
+      "toss_winner_win_rate_not_followed": 0.4887640449438202,
+      "n_not_followed": 178,
+      "chi2_p": 0.4362145140488676,
+      "recommended_role_win_rate": 0.5226537216828478,
+      "always_field_role_win_rate": 0.5372168284789645
+    }
+  }
+}

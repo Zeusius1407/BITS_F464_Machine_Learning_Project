@@ -1,0 +1,126 @@
+
+=== 0 overs: standardised coefficients (runs per 1 SD), train 2008-21 ===
+                       std_coef  p_value
+A_home                   3.6359   0.0008
+A_lineup_bat_sr          3.1778   0.0497
+B_lineup_bowl_econ       3.1062   0.0286
+is_playoff               1.1343   0.2659
+played_abroad           -1.0012   0.3564
+A_lineup_bat_rpi        -0.8401   0.5088
+B_avg_conceded5         -0.7924   0.5475
+venue_avg_inn1_smooth    0.5770   0.6142
+A_avg_scored5            0.5621   0.6728
+recent_league_inn1      -0.1743   0.8979
+--- permutation importance on test (RMSE increase, runs) ---
+A_home                   0.569
+B_lineup_bowl_econ       0.313
+A_lineup_bat_sr          0.136
+A_lineup_bat_rpi         0.089
+venue_avg_inn1_smooth    0.028
+played_abroad            0.000
+recent_league_inn1      -0.008
+B_avg_conceded5         -0.011
+A_avg_scored5           -0.025
+is_playoff              -0.077
+
+=== 6 overs: standardised coefficients (runs per 1 SD), train 2008-21 ===
+                       std_coef  p_value
+runs_6                  10.4054   0.0000
+wkts_6                  -8.3225   0.0000
+B_lineup_bowl_econ       2.6840   0.0201
+A_home                   2.5226   0.0044
+A_lineup_bat_sr          1.9716   0.1341
+is_playoff               1.2621   0.1281
+last3_6                  1.1559   0.3614
+played_abroad           -1.0607   0.2292
+venue_avg_inn1_smooth    0.8570   0.3573
+B_avg_conceded5         -0.4558   0.6702
+A_lineup_bat_rpi        -0.3735   0.7172
+rr_x_wkts_in_hand_6     -0.3478   0.6782
+recent_league_inn1      -0.3422   0.7565
+sixes_6                  0.1189   0.9031
+A_avg_scored5           -0.0052   0.9962
+--- permutation importance on test (RMSE increase, runs) ---
+runs_6                   6.137
+wkts_6                   3.011
+A_home                   0.339
+B_lineup_bowl_econ       0.286
+last3_6                  0.057
+A_lineup_bat_rpi         0.033
+sixes_6                  0.017
+venue_avg_inn1_smooth    0.006
+A_avg_scored5            0.000
+A_lineup_bat_sr          0.000
+played_abroad            0.000
+recent_league_inn1      -0.004
+B_avg_conceded5         -0.013
+rr_x_wkts_in_hand_6     -0.024
+is_playoff              -0.096
+
+=== 10 overs: standardised coefficients (runs per 1 SD), train 2008-21 ===
+                       std_coef  p_value
+runs_10                 14.1086   0.0000
+wkts_10                 -8.0582   0.0000
+rr_x_wkts_in_hand_10    -3.0661   0.0000
+A_home                   1.9160   0.0094
+is_playoff               1.7820   0.0098
+B_lineup_bowl_econ       1.6735   0.0813
+A_lineup_bat_sr          1.2998   0.2373
+last3_10                 1.2604   0.1761
+sixes_10                 1.2461   0.1651
+played_abroad           -1.1099   0.1308
+A_lineup_bat_rpi        -0.7139   0.4064
+venue_avg_inn1_smooth    0.5451   0.4819
+recent_league_inn1       0.2285   0.8034
+A_avg_scored5           -0.1770   0.8438
+B_avg_conceded5          0.1414   0.8740
+--- permutation importance on test (RMSE increase, runs) ---
+runs_10                  11.680
+wkts_10                   4.188
+sixes_10                  0.417
+last3_10                  0.325
+A_home                    0.231
+A_lineup_bat_rpi          0.108
+rr_x_wkts_in_hand_10      0.087
+B_lineup_bowl_econ        0.082
+A_avg_scored5             0.022
+venue_avg_inn1_smooth     0.004
+played_abroad             0.000
+B_avg_conceded5          -0.003
+recent_league_inn1       -0.005
+A_lineup_bat_sr          -0.099
+is_playoff               -0.197
+
+=== 15 overs: standardised coefficients (runs per 1 SD), train 2008-21 ===
+                       std_coef  p_value
+runs_15                 20.3834   0.0000
+wkts_15                 -6.4859   0.0000
+rr_x_wkts_in_hand_15    -2.4396   0.0000
+sixes_15                 1.5805   0.0208
+A_lineup_bat_sr          0.9778   0.1914
+B_lineup_bowl_econ       0.8600   0.1854
+venue_avg_inn1_smooth    0.7953   0.1305
+A_home                   0.7384   0.1404
+is_playoff               0.6512   0.1639
+A_lineup_bat_rpi        -0.3084   0.5980
+A_avg_scored5           -0.1268   0.8354
+recent_league_inn1       0.1053   0.8659
+played_abroad           -0.1005   0.8398
+last3_15                 0.0921   0.8800
+B_avg_conceded5         -0.0689   0.9091
+--- permutation importance on test (RMSE increase, runs) ---
+runs_15                  23.899
+wkts_15                   3.561
+rr_x_wkts_in_hand_15      0.617
+sixes_15                  0.385
+A_home                    0.112
+B_lineup_bowl_econ        0.072
+A_lineup_bat_sr           0.034
+A_lineup_bat_rpi          0.029
+A_avg_scored5             0.016
+venue_avg_inn1_smooth     0.006
+recent_league_inn1        0.002
+B_avg_conceded5           0.002
+last3_15                  0.001
+played_abroad             0.000
+is_playoff               -0.043
